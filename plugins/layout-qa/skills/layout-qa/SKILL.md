@@ -83,6 +83,26 @@ Layout QA writes local artifacts under `.layout/runs/<timestamp-scenario-viewpor
 
 After a run, inspect `result.json` for pass/fail status and cite the report path. When visual quality matters, inspect screenshots before concluding that the change is good.
 
+## Visual Review Requirements
+
+Do not treat a passed Layout QA run as proof that the UI looks correct. Layout QA can verify browser health and scripted assertions, but visual QA requires direct screenshot review.
+
+Before saying a page or flow "looks good":
+
+1. Build a screenshot inventory from the report artifacts and group screenshots by viewport, route, page family, scenario, and component state.
+2. Open or render the relevant screenshots. If there are related pages at the same viewport, inspect them together instead of one at a time.
+3. Compare shared layout landmarks across the group:
+   - header and body left/right edges
+   - nav, logo, and content container widths
+   - hero, article, card, and footer alignment
+   - vertical rhythm between shared sections
+   - text wrapping, clipping, overflow, and collision
+   - repeated component sizing and spacing
+4. Look for cross-page inconsistencies even when every individual page is readable. For example, a docs page and a privacy page can each render successfully while their header contents and body contents are misaligned because they use different max-width containers.
+5. Report visual findings separately from automated pass/fail status. Use language such as "automated checks passed, but visual review found..." when screenshots show alignment, spacing, hierarchy, or responsive issues.
+
+For multi-page site QA, capture the same viewport for each important route, then compare those screenshots as a set. For desktop documentation/legal pages, explicitly verify that the header, article body, and footer use a coherent horizontal grid. For mobile, explicitly check that nav, headings, and body content do not overflow or shift unexpectedly between sibling pages.
+
 The CLI exits `0` on pass and `1` on failure. Treat a failing Layout QA command as actionable signal: report the failing flow, failed step, browser error, missing text, or screenshot/report path.
 
 ## Remote Tests
