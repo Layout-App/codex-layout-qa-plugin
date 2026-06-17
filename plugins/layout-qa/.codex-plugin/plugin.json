@@ -1,6 +1,6 @@
 {
   "name": "layout-qa",
-  "version": "0.4.3",
+  "version": "0.4.3+codex.icon-20260617",
   "description": "Run Layout QA browser checks and inspect visual reports for frontend changes.",
   "author": {
     "name": "Layout",
@@ -31,8 +31,8 @@
     ],
     "websiteURL": "https://trylayout.com",
     "brandColor": "#111111",
-    "composerIcon": "assets/layout-qa-logo.svg",
-    "logo": "assets/layout-qa-logo.svg",
+    "composerIcon": "./assets/layout-qa-composer-icon.png",
+    "logo": "./assets/layout-qa-logo.png",
     "defaultPrompt": [
       "Run visual QA for this frontend change.",
       "Set up Layout QA for this app.",
