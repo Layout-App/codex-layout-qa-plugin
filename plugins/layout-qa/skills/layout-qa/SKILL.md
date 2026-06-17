@@ -98,7 +98,7 @@ Before saying a page or flow "looks good":
    - vertical rhythm between shared sections
    - text wrapping, clipping, overflow, and collision
    - repeated component sizing and spacing
-4. Look for cross-page inconsistencies even when every individual page is readable. For example, a docs page and a privacy page can each render successfully while their header contents and body contents are misaligned because they use different max-width containers.
+4. Look for cross-page inconsistencies even when every individual page is readable. For example, related pages can each render successfully while their header contents and body contents are misaligned because they use different max-width containers.
 5. Report visual findings separately from automated pass/fail status. Use language such as "automated checks passed, but visual review found..." when screenshots show alignment, spacing, hierarchy, or responsive issues.
 
 For multi-page site QA, capture the same viewport for each important route, then compare those screenshots as a set. For desktop documentation/legal pages, explicitly verify that the header, article body, and footer use a coherent horizontal grid. For mobile, explicitly check that nav, headings, and body content do not overflow or shift unexpectedly between sibling pages.

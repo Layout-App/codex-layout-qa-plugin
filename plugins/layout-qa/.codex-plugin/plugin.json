@@ -1,6 +1,6 @@
 {
   "name": "layout-qa",
-  "version": "0.4.3+codex.20260617070727",
+  "version": "0.4.3+codex.20260617071059",
   "description": "Run Layout QA browser checks and inspect visual reports for frontend changes.",
   "author": {
     "name": "Layout",
