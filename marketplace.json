@@ -1,0 +1,20 @@
+{
+  "name": "layout",
+  "interface": {
+    "displayName": "Layout"
+  },
+  "plugins": [
+    {
+      "name": "layout-qa",
+      "source": {
+        "source": "local",
+        "path": "./plugins/layout-qa"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

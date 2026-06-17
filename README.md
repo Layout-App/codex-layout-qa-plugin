@@ -1,8 +1,8 @@
-# Layout QA Codex Plugin
+# Layout QA Codex Marketplace
 
-This repository contains the Codex plugin for [Layout QA](https://github.com/Layout-App/layout-qa).
+This repository publishes the Codex plugin marketplace for [Layout](https://trylayout.com).
 
-The plugin teaches Codex when and how to use the `@trylayout/qa` npm package for frontend visual QA:
+It currently includes the Layout QA plugin, which teaches Codex when and how to use the `@trylayout/qa` npm package for frontend visual QA:
 
 - initialize `.layout/qa.json`
 - run local Playwright-backed browser checks
@@ -10,12 +10,29 @@ The plugin teaches Codex when and how to use the `@trylayout/qa` npm package for
 - inspect Layout QA screenshots and HTML reports
 - trigger remote Layout tests when a Layout API key is available
 
+## Install
+
+Add the Layout marketplace:
+
+```bash
+codex plugin marketplace add Layout-App/codex-layout-qa-plugin --ref main
+```
+
+Install the Layout QA plugin:
+
+```bash
+codex plugin add layout-qa@layout
+```
+
+After installing, start a new Codex thread so the plugin skill is available.
+
 ## Structure
 
 ```text
-.codex-plugin/plugin.json
-assets/layout-qa-logo.svg
-skills/layout-qa/SKILL.md
+marketplace.json
+plugins/layout-qa/.codex-plugin/plugin.json
+plugins/layout-qa/assets/layout-qa-logo.svg
+plugins/layout-qa/skills/layout-qa/SKILL.md
 ```
 
 The plugin does not vendor the Layout QA CLI. It invokes the public npm package with commands such as:
@@ -28,13 +45,18 @@ npx @trylayout/qa init
 
 ## Local Development
 
-Validate the plugin with the plugin-creator validator:
+Validate the plugin:
 
 ```bash
-python3 ~/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py .
+python3 ~/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py plugins/layout-qa
 ```
 
-For local testing in Codex, point a personal marketplace entry at this repo or copy the repo contents into `~/plugins/layout-qa`.
+Test the marketplace locally:
+
+```bash
+codex plugin marketplace add /path/to/codex-layout-qa-plugin
+codex plugin add layout-qa@layout
+```
 
 ## Related Package
 

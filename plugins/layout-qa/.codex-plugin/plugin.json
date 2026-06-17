@@ -6,7 +6,7 @@
     "name": "Layout",
     "url": "https://github.com/Layout-App"
   },
-  "homepage": "https://github.com/Layout-App/layout-qa#readme",
+  "homepage": "https://trylayout.com",
   "repository": "https://github.com/Layout-App/layout-qa",
   "license": "MIT",
   "keywords": [
@@ -29,7 +29,7 @@
       "Visual testing",
       "Reports"
     ],
-    "websiteURL": "https://github.com/Layout-App/layout-qa",
+    "websiteURL": "https://trylayout.com",
     "brandColor": "#111111",
     "composerIcon": "assets/layout-qa-logo.svg",
     "logo": "assets/layout-qa-logo.svg",
