@@ -1,0 +1,42 @@
+{
+  "name": "layout-qa",
+  "version": "0.4.3",
+  "description": "Run Layout QA browser checks and inspect visual reports for frontend changes.",
+  "author": {
+    "name": "Layout",
+    "url": "https://github.com/Layout-App"
+  },
+  "homepage": "https://github.com/Layout-App/layout-qa#readme",
+  "repository": "https://github.com/Layout-App/layout-qa",
+  "license": "MIT",
+  "keywords": [
+    "layout",
+    "qa",
+    "playwright",
+    "frontend",
+    "visual-testing",
+    "ai-agents"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Layout QA",
+    "shortDescription": "Run visual QA checks for frontend work.",
+    "longDescription": "Layout QA helps Codex initialize visual QA manifests, run local browser checks with Playwright, serve deterministic mock API scenarios, inspect generated screenshots and HTML reports, and use Layout remote tests when an API key is available.",
+    "developerName": "Layout",
+    "category": "Productivity",
+    "capabilities": [
+      "Browser QA",
+      "Visual testing",
+      "Reports"
+    ],
+    "websiteURL": "https://github.com/Layout-App/layout-qa",
+    "brandColor": "#111111",
+    "composerIcon": "assets/layout-qa-logo.svg",
+    "logo": "assets/layout-qa-logo.svg",
+    "defaultPrompt": [
+      "Run visual QA for this frontend change.",
+      "Set up Layout QA for this app.",
+      "Inspect the latest Layout QA report."
+    ]
+  }
+}
