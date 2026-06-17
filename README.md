@@ -29,7 +29,7 @@ After installing, start a new Codex thread so the plugin skill is available.
 ## Structure
 
 ```text
-marketplace.json
+.agents/plugins/marketplace.json
 plugins/layout-qa/.codex-plugin/plugin.json
 plugins/layout-qa/assets/layout-qa-logo.svg
 plugins/layout-qa/skills/layout-qa/SKILL.md
