@@ -2,13 +2,14 @@
 
 This repository publishes the Codex plugin marketplace for [Layout](https://trylayout.com).
 
-It currently includes the Layout QA plugin, which teaches Codex when and how to use the `@trylayout/qa` npm package for frontend visual QA:
+It currently includes the Layout QA plugin, which teaches Codex when and how to
+use the `@trylayout/qa` npm package as an open source frontend QA protocol:
 
-- initialize `.layout/qa.json`
-- run local Playwright-backed browser checks
-- serve deterministic mock API scenarios
-- inspect Layout QA screenshots and HTML reports
-- trigger remote Layout tests when a Layout API key is available
+- set up repo-local QA protocol files with `trylayout setup`
+- run local browser QA passes with `trylayout test`
+- inspect generated screenshots, JSON results, and HTML reports
+- use explicit manifest flows with `trylayout check` when useful
+- serve deterministic mock API scenarios for frontend QA
 
 ## Install
 
@@ -35,12 +36,15 @@ plugins/layout-qa/assets/layout-qa-logo.svg
 plugins/layout-qa/skills/layout-qa/SKILL.md
 ```
 
-The plugin does not vendor the Layout QA CLI. It invokes the public npm package with commands such as:
+The plugin does not vendor the Layout QA CLI. It invokes the public npm package
+with commands such as:
 
 ```bash
-npx @trylayout/qa check --start-app --skip-install --json
+npx @trylayout/qa setup
+npx @trylayout/qa test "test the changed checkout flow" --json
+npx @trylayout/qa check smoke --start-app --skip-install --json
 npx @trylayout/qa check --target-url http://localhost:5173 --scenario happy_path --json
-npx @trylayout/qa init
+npx @trylayout/qa mock-api --scenario happy_path
 ```
 
 ## Local Development

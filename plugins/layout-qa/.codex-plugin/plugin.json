@@ -1,7 +1,7 @@
 {
   "name": "layout-qa",
-  "version": "0.4.3+codex.20260617071059",
-  "description": "Run Layout QA browser checks and inspect visual reports for frontend changes.",
+  "version": "0.4.3+codex.20260622081332",
+  "description": "Use the Layout open source frontend QA protocol for coding-agent browser checks.",
   "author": {
     "name": "Layout",
     "url": "https://github.com/Layout-App"
@@ -20,22 +20,22 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Layout QA",
-    "shortDescription": "Run visual QA checks for frontend work.",
-    "longDescription": "Layout QA helps Codex initialize visual QA manifests, run local browser checks with Playwright, serve deterministic mock API scenarios, inspect generated screenshots and HTML reports, and use Layout remote tests when an API key is available.",
+    "shortDescription": "Run frontend QA protocol checks.",
+    "longDescription": "Layout QA helps Codex set up repo-local frontend QA protocol files, run local browser checks, inspect generated screenshots and HTML reports, serve deterministic mock API scenarios, and report concrete visual, UX, and state issues from the active coding session.",
     "developerName": "Layout",
     "category": "Productivity",
     "capabilities": [
+      "Protocol setup",
       "Browser QA",
-      "Visual testing",
-      "Reports"
+      "Visual review"
     ],
     "websiteURL": "https://trylayout.com",
     "brandColor": "#111111",
     "composerIcon": "./assets/layout-qa-composer-icon.png",
     "logo": "./assets/layout-qa-logo.png",
     "defaultPrompt": [
-      "Run visual QA for this frontend change.",
       "Set up Layout QA for this app.",
+      "Run Layout QA for this frontend change.",
       "Inspect the latest Layout QA report."
     ]
   }
