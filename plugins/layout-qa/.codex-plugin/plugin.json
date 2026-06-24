@@ -1,7 +1,7 @@
 {
   "name": "layout-qa",
-  "version": "0.4.3+codex.20260622081332",
-  "description": "Use the Layout open source frontend QA protocol for coding-agent browser checks.",
+  "version": "0.4.3+codex.20260624081701",
+  "description": "Use Layout local QA protocol checks and remote GitHub PR checks for frontend changes.",
   "author": {
     "name": "Layout",
     "url": "https://github.com/Layout-App"
@@ -20,12 +20,13 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Layout QA",
-    "shortDescription": "Run frontend QA protocol checks.",
-    "longDescription": "Layout QA helps Codex set up repo-local frontend QA protocol files, run local browser checks, inspect generated screenshots and HTML reports, serve deterministic mock API scenarios, and report concrete visual, UX, and state issues from the active coding session.",
+    "shortDescription": "Run local and PR frontend QA checks.",
+    "longDescription": "Layout QA helps Codex set up repo-local frontend QA protocol files, run local browser checks, add remote GitHub PR checks, inspect generated screenshots and HTML reports, serve deterministic mock API scenarios, and report concrete visual, UX, and state issues from the active coding session.",
     "developerName": "Layout",
     "category": "Productivity",
     "capabilities": [
       "Protocol setup",
+      "PR checks",
       "Browser QA",
       "Visual review"
     ],
@@ -36,6 +37,7 @@
     "defaultPrompt": [
       "Set up Layout QA for this app.",
       "Run Layout QA for this frontend change.",
+      "Add a Layout PR check.",
       "Inspect the latest Layout QA report."
     ]
   }

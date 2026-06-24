@@ -7,6 +7,7 @@ use the `@trylayout/qa` npm package as an open source frontend QA protocol:
 
 - set up repo-local QA protocol files with `trylayout setup`
 - run local browser QA passes with `trylayout test`
+- add remote GitHub PR checks with `trylayout pr setup`
 - inspect generated screenshots, JSON results, and HTML reports
 - use explicit manifest flows with `trylayout check` when useful
 - serve deterministic mock API scenarios for frontend QA
@@ -42,6 +43,8 @@ with commands such as:
 ```bash
 npx @trylayout/qa setup
 npx @trylayout/qa test "test the changed checkout flow" --json
+npx @trylayout/qa pr setup
+npx @trylayout/qa pr run "test this pull request" --repo owner/repo --ref branch --wait --json
 npx @trylayout/qa check smoke --start-app --skip-install --json
 npx @trylayout/qa check --target-url http://localhost:5173 --scenario happy_path --json
 npx @trylayout/qa mock-api --scenario happy_path

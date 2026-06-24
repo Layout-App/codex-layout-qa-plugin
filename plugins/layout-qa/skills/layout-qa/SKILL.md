@@ -1,6 +1,6 @@
 ---
 name: layout-qa
-description: Use when the user asks to set up, run, debug, or interpret Layout QA visual/browser tests for a frontend app, including local protocol checks, mock API scenarios, screenshots, and HTML reports.
+description: Use when the user asks to set up, run, debug, or interpret Layout QA visual/browser tests for a frontend app, including local protocol checks, remote GitHub PR checks, mock API scenarios, screenshots, and HTML reports.
 ---
 
 # Layout QA
@@ -8,13 +8,15 @@ description: Use when the user asks to set up, run, debug, or interpret Layout Q
 Use this skill to run frontend QA for coding agents with the `@trylayout/qa`
 npm package. The product surface is an open source repo-local protocol:
 `trylayout setup` creates the protocol files, and `trylayout test` runs a local
-browser QA pass from the active coding session.
+browser QA pass from the active coding session. Teams can add hosted GitHub PR
+checks with `trylayout pr setup`; GitHub remains the system of record, and the
+Layout dashboard is for deeper run inspection.
 
 ## When To Invoke
 
 Use Layout QA when the user asks for visual QA, browser QA, frontend QA,
-layout testing, screenshot reports, deterministic mock API scenarios, or to
-validate a UI change in a browser.
+layout testing, screenshot reports, deterministic mock API scenarios, remote PR
+checks, or to validate a UI change in a browser.
 
 Do not use it for unit tests, pure backend changes, static code review, or
 generic Playwright authoring unless the user specifically wants Layout QA.
@@ -71,6 +73,40 @@ npx @trylayout/qa test "check the current page" \
 
 6. Inspect `result.json` and the generated screenshots before summarizing. Cite
 the artifact paths and report concrete issues the coding agent should fix.
+
+## Remote PR Check Workflow
+
+Use this flow when the user wants Layout to run automatically on GitHub pull
+requests or asks for remote/CI coverage.
+
+1. Set up the GitHub Actions workflow:
+
+```bash
+npx @trylayout/qa pr setup
+```
+
+2. Tell the user the repo needs a `LAYOUT_API_KEY` GitHub secret. Do not invent
+API keys.
+
+3. For a manual remote run, use:
+
+```bash
+npx @trylayout/qa pr run "test this pull request" \
+  --repo owner/repo \
+  --ref feature-branch \
+  --wait \
+  --json
+```
+
+4. For a later status check, use:
+
+```bash
+npx @trylayout/qa pr status <run_id> --wait --json
+```
+
+Treat GitHub as the primary workflow surface. Use the Layout run link only when
+the PR check output is too compact and the user needs screenshots, logs, or
+setup failure details.
 
 ## Explicit Flow Checks
 
